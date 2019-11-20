@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace _19._11._2019
+{
+    abstract class Animal
+    { }
+
+    abstract class Herbivore: Animal 
+    { }
+
+    abstract class Predator : Animal
+    { }
+    class Wolf : Predator
+    { }
+
+    class Fox : Predator
+    { }
+    class Rabbit : Herbivore
+    { }
+
+    class Deer : Herbivore
+    { }
+
+    private static void Main(string[] args)
+    {
+        int a = 0, w = 0, r = 0, d = 0, p = 0, h = 0, f = 0;
+        Animal[] animals = new Animal[6];
+        animals[0] = new Wolf();
+        animals[1] = new Fox();
+        animals[2] = new Rabbit();
+        animals[3] = new Rabbit();
+        animals[4] = new Deer();
+        animals[5] = new Wolf();
+
+        Herbivore wert = new Deer();
+
+
+        foreach (var item in animals)
+        {
+            if (item is Animal) a++;
+            if (item is Predator) p++;
+            if (item is Herbivore) h++;
+            if (item is Wolf) w++;
+            if (item is Fox) f++;
+            if (item is Rabbit) r++;
+            if (item is Deer) d++;
+        }
+
+        Wolf wolf;
+        wolf = animals[0] as Wolf;
+        wolf = animals[1] as Wolf;
+    }
+}
